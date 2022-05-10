@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+.calculator-grid {
+    background-color: #292b33;
+    position: relative;
+    display: grid;
+    grid-template-rows: 80px repeat(5, 50px);
+    grid-template-columns: repeat(4, 60px);
+    row-gap: 1px;
+    column-gap: 1px;
+    padding: 1px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+.output {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+}
+.prev-operand,
+.curr-operand {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.curr-operand {
+    border-top: solid 0.5px rgba(255, 255, 255, 0.4);
+    font-size: 2.5rem;
+}
+.span-two {
+    grid-column: span 2;
+}
+button {
+    position: relative;
+    font-family: inherit;
+    border: none;
+    background-color: #5f5e64;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+}
+button:active::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.4);
+}
+button.orange {
+    background-color: #ff9e08;
+}
+button.dark-grey {
+    background-color: #3e4044;
+}
+.calculator-grid button:nth-child(18) {
+    border-bottom-left-radius: 10px;
+}
+.calculator-grid button:nth-child(18):active::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom-left-radius: 10px;
+}
+.calculator-grid button:nth-child(20):active::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom-right-radius: 10px;
+}
+.calculator-grid button:nth-child(20) {
+    border-bottom-right-radius: 10px;
+}
